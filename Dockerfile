@@ -5,7 +5,7 @@
 FROM debian:stretch
 LABEL maintainer="Luong Bui"
 
-RUN apt-get update && apt-get -y install vim nano g++-multilib git python curl build-essential debhelper zip
+RUN apt-get update && apt-get -y install vim nano g++-multilib git python curl build-essential debhelper zip libc6-dev-i386
 
 RUN git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 ENV PATH="/depot_tools:${PATH}"
