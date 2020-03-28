@@ -5,7 +5,7 @@
 FROM debian:stretch
 LABEL maintainer="Luong Bui"
 
-RUN apt-get update && apt-get -y install vim nano g++-multilib git python curl build-essential debhelper zip libc6-dev-i386
+RUN apt-get update && apt-get -y install vim nano g++-multilib git python curl build-essential debhelper zip
 
 RUN git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 ENV PATH="/depot_tools:${PATH}"
@@ -13,7 +13,7 @@ WORKDIR /
 RUN git clone https://github.com/manhluong/build_cross_toolchain_raspberry.git
 
 WORKDIR /dart-sdk
-ARG dart_version=2.0.0-dev.55.0
+ARG dart_version=2.0.0
 RUN git clone https://github.com/dart-lang/sdk.git -b $dart_version
 
 RUN gclient config --name=sdk --unmanaged git@github.com:dart-lang/sdk.git \
