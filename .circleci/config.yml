@@ -3,7 +3,7 @@ _defaults: &defaults
     - image: luongbui/debian_stretch_docker:17.05.0-ce
   environment:
     DOCKER_REPO: "luongbui/dart-vm_armv6"
-    TAG: "2.6.0"
+    TAG: "2.2.0"
 
 _restore_docker_cache: &restore_docker_cache
   restore_cache:
